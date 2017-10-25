@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import {Headers, Http} from "@angular/http";
+import {Headers, Http, Response} from "@angular/http";
 import {CredentialsService} from "./credentials.service";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthenticateService {
 
-  constructor(private http:Http, private cred: CredentialsService) { }
+  constructor(private http:Http, private cred: CredentialsService, private router: Router) { }
 
   login(username: string, password: string) {
     let base64Credentials = btoa(username + ':' + password);
@@ -13,9 +14,13 @@ export class AuthenticateService {
     this.http.get('http://localhost:8080/user', {
       headers : headers
     }).subscribe(
-      (response) => {
+      (response: Response) => {
         this.cred.setCredentials(base64Credentials);
         console.log('Successfully logged in');
+        let name: string = response.json()['principal']['name'];
+        name.toUpperCase();
+        localStorage.setItem('username', name);
+        this.router.navigate(['/']);
         return "Successfully logged in as " + username;
       },
       (error) => {
@@ -30,11 +35,16 @@ export class AuthenticateService {
   }
 
   logout() {
+    localStorage.removeItem('username');
     this.cred.clearCredentials();
   }
 
   isLoggedIn() {
     return this.cred.isLoggedIn();
+  }
+
+  getUsername() {
+    return localStorage.getItem('username');
   }
 
 }

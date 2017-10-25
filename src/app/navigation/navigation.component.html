@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="/">CodePoint</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Problems</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Editorials</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <div *ngIf="!auth.isLoggedIn()">
+      <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0" type="button" style="width: 150px;">Login</button></a>
+      </div>
+      <div *ngIf="auth.isLoggedIn()">
+        <h6 class="d-inline text-capitalize">Hello, {{auth.getUsername()}}</h6>
+        <button class="ml-3 btn btn-outline-primary my-2 my-sm-0" type="button" style="width: 150px;"
+                (click)="auth.logout()">Logout
+        </button>
+      </div>
+    </form>
+  </div>
+</nav>
