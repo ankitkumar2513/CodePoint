@@ -1,0 +1,28 @@
+<div class="container">
+  <form class="form-group">
+    <div class="row">
+      <label>
+        Username:
+        <input class="form-control" type="text" [(ngModel)]="username" name="username">
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        Password:
+        <input class="form-control" type="password" [(ngModel)]="password" name="password">
+      </label>
+    </div>
+    <div class="row">
+      <input class="btn btn-primary" type="button" value="Login" (click)="login()">
+      <input [disabled]="isCleared()" class="btn btn-primary" type="button" value="Clear" (click)="clear()">
+    </div>
+    <div *ngIf="auth.isLoggedIn()">
+      <div class="row">
+        <input class="btn btn-success" type="button" value="Get all users" (click)="getSecuredResource()">
+      </div>
+      <div class="row">
+        <input class="btn btn-danger" type="button" value="Logout" (click)="auth.logout()">
+      </div>
+    </div>
+  </form>
+</div>
