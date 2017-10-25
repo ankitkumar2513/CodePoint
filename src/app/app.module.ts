@@ -10,10 +10,14 @@ import {RouterModule, Routes} from "@angular/router";
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { CodeEditorComponent } from './problem-page/code-editor/code-editor.component';
+import { QuestionPanelComponent } from './problem-page/question-panel/question-panel.component';
+import { ProblemPageComponent } from './problem-page/problem-page.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'solve', component: ProblemPageComponent}
 ];
 
 @NgModule({
@@ -22,7 +26,10 @@ const appRoutes: Routes = [
     LoginComponent,
     FooterComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    CodeEditorComponent,
+    QuestionPanelComponent,
+    ProblemPageComponent
   ],
   imports: [
     BrowserModule,

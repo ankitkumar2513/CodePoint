@@ -1,0 +1,12 @@
+.card-background {
+  border: 5px solid #dedede;
+  background-color: white;
+  padding: 3em 5em 5em 5em;
+  border-radius: 0.5em;
+}
+.border-thick {
+  border: 5px solid #dedede;
+}
+.padding-thick {
+  padding: 5em;
+}

@@ -1,0 +1,13 @@
+<div class="form-inline" id="lang-div">
+  <label for="lang">Language</label>
+  <select class="form-control" id="lang" (change)="langChange($event.target)" style="cursor: pointer;">
+    <option *ngFor="let lang of langList" [value]="lang">{{ lang }}</option>
+  </select>
+</div>
+<label style="float: left; margin-top: 1%; font-weight: bold;" for="source">Source Code</label>
+<div id="source">
+  <pre id="editor"></pre>
+</div>
+<div>
+  <button class="btn btn-primary" id="compile">Compile</button>
+</div>

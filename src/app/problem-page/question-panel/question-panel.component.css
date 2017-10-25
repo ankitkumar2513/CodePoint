@@ -1,0 +1,50 @@
+p {
+
+}
+hr {
+  border-top: 1px solid #8c8b8b;
+  text-align: center;
+}
+hr:after {
+  content: '§';
+  display: inline-block;
+  position: relative;
+  top: -14px;
+  padding: 0 10px;
+  background-color: white;
+  color: #8c8b8b;
+  font-size: 18px;
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+#problem-meta {
+  float: right;
+  padding-bottom: 1em;
+}
+#problem-body {
+  clear: both;
+}
+.problem-name-label {
+  font-size: 200%;
+  float: right;
+}
+.problem-tags {
+  color: gray;
+  float: right;
+}
+.author-label {
+  color: gray;
+  font-size: 80%;
+  float: right;
+}
+.problem-statement-label {
+  font-weight: bold;
+}
+.problem-statement {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.monospace {
+  font-family: monospace;
+}

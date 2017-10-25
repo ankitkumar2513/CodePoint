@@ -1,0 +1,8 @@
+<div class="container col-xl-9 col-md-10 card border-thick padding-thick mt-5 mb-5">
+  <app-question-panel></app-question-panel>
+  <app-code-editor *ngIf="auth.isLoggedIn()"></app-code-editor>
+  <div *ngIf="!auth.isLoggedIn()" class="alert alert-warning mt-5">
+    <strong>Oh Snap! </strong>Login first to start coding
+  </div>
+</div>
+<div style="margin-bottom: 100px;"></div>

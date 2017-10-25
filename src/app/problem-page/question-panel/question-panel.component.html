@@ -1,0 +1,29 @@
+<div id="problem-meta">
+  <span class="problem-name-label">{{ problem.title }}</span>
+  <br>
+  <span class="problem-tags">{{ problem.diff }}</span>
+  <br>
+  <span class="author-label">Author: <a href="#">{{ problem.author }}</a></span>
+</div>
+<div id="problem-body">
+  <hr>
+  <p class="problem-statement-label">Problem Statement</p>
+  <p class="problem-statement">{{ problem.statement }}</p>
+  <p class="problem-statement-label">Input</p>
+  <p>{{ problem.input }}</p>
+  <p class="problem-statement-label">Output</p>
+  <p>{{ problem.output }}</p>
+  <p class="problem-statement-label">Input Format</p>
+  <p>{{ problem.inputFormat }}</p>
+  <p class="problem-statement-label">Output Format</p>
+  <p>{{ problem.outputFormat }}</p>
+  <p class="problem-statement-label">Sample Input</p>
+  <span class="monospace" *ngFor="let input of parseMultiline(problem.sampleInput)">
+    {{ input }}<br>
+  </span>
+  <p class="problem-statement-label">Sample Output</p>
+  <span class="monospace" *ngFor="let output of parseMultiline(problem.sampleOutput)">
+  {{ output }}<br>
+</span>
+
+</div>
