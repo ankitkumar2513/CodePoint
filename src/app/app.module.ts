@@ -13,11 +13,14 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { CodeEditorComponent } from './problem-page/code-editor/code-editor.component';
 import { QuestionPanelComponent } from './problem-page/question-panel/question-panel.component';
 import { ProblemPageComponent } from './problem-page/problem-page.component';
+import { AllusersComponent } from './admin/allusers/allusers.component';
+import { UserItemComponent } from './admin/allusers/user-item/user-item.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'solve', component: ProblemPageComponent}
+  {path: 'solve', component: ProblemPageComponent},
+  {path: 'admin/allusers', component: AllusersComponent}
 ];
 
 @NgModule({
@@ -29,7 +32,9 @@ const appRoutes: Routes = [
     NavigationComponent,
     CodeEditorComponent,
     QuestionPanelComponent,
-    ProblemPageComponent
+    ProblemPageComponent,
+    AllusersComponent,
+    UserItemComponent
   ],
   imports: [
     BrowserModule,

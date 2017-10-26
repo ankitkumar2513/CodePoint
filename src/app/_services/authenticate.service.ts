@@ -17,9 +17,10 @@ export class AuthenticateService {
       (response: Response) => {
         this.cred.setCredentials(base64Credentials);
         console.log('Successfully logged in');
-        let name: string = response.json()['principal']['name'];
-        name.toUpperCase();
-        localStorage.setItem('username', name);
+        localStorage.setItem('name', response.json()['principal']['name']);
+        let roles: string[] = response.json()['principal']['roles'];
+        let rolesString = roles.join(',');
+        localStorage.setItem('roles', rolesString);
         this.router.navigate(['/']);
         return "Successfully logged in as " + username;
       },
@@ -35,16 +36,30 @@ export class AuthenticateService {
   }
 
   logout() {
-    localStorage.removeItem('username');
+    localStorage.removeItem('name');
+    localStorage.removeItem('roles');
     this.cred.clearCredentials();
+    this.router.navigate(['/']);
   }
 
   isLoggedIn() {
     return this.cred.isLoggedIn();
   }
 
-  getUsername() {
-    return localStorage.getItem('username');
+  getName() {
+    return localStorage.getItem('name');
+  }
+
+  private getRoles(): string[] {
+    if(localStorage.getItem('roles') != null) {
+      return localStorage.getItem('roles').split(',');
+    } else {
+      return Array.of(null);
+    }
+  }
+
+  isRolePresent(role: string): boolean {
+    return this.getRoles().indexOf(role) != -1;
   }
 
 }

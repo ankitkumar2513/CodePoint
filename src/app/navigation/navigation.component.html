@@ -18,13 +18,16 @@
       <li class="nav-item">
         <a class="nav-link" href="/solve">Compile</a>
       </li>
+      <li *ngIf="auth.isRolePresent('ADMIN')" class="nav-item">
+        <a class="nav-link" href="/admin/allusers">All Users</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <div *ngIf="!auth.isLoggedIn()">
       <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0" type="button" style="width: 150px;">Login</button></a>
       </div>
       <div *ngIf="auth.isLoggedIn()">
-        <h6 class="d-inline text-capitalize">Hello, {{auth.getUsername()}}</h6>
+        <h6 class="d-inline text-capitalize">Hello, {{auth.getName()}}</h6>
         <button class="ml-3 btn btn-outline-primary my-2 my-sm-0" type="button" style="width: 150px;"
                 (click)="auth.logout()">Logout
         </button>

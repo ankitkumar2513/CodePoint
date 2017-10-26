@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <button class="btn btn-primary mb-3" type="button" (click)="loadAllUsers()">Show all users</button>
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let user of allUsers">
+        <app-user-item [user] = "user"></app-user-item>
+      </li>
+    </ul>
+  </div>
+</div>
