@@ -1,6 +1,7 @@
 # CodePoint
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
+To run add ace editor files (in folder named ace) inside assets/ace.
 
 ## Development server
 
