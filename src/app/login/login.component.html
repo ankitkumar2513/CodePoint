@@ -18,6 +18,7 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()" [disabled]="auth.isLoggedIn()">Sign in</button>
+      <button class="btn btn-lg btn-success btn-block" type="button" (click)="goToRegisterPage()" [disabled]="auth.isLoggedIn()">Register</button>
     </form>
   </div>
 </div>

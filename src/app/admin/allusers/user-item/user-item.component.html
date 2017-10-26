@@ -1,3 +1,9 @@
 <strong>Username: </strong>{{user.username}}
 <strong>Name: </strong> {{user.name}}
 <strong>Roles: </strong>{{user.roles}}
+<div style="position: absolute; right: 20px; display: inline;">
+  <label for="toDelete"></label>
+    <input id="toDelete" (change)="onDeleteStatusChanged()" [(ngModel)]="deleteStatus" class="form-control-sm"
+           type="checkbox"
+           [disabled]="user.roles.indexOf('ADMIN')!=-1"/>
+</div>

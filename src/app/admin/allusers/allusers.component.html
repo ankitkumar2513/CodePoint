@@ -1,10 +1,19 @@
 <div class="container mt-5">
-  <button class="btn btn-primary mb-3" type="button" (click)="loadAllUsers()">Show all users</button>
-  <div>
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let user of allUsers">
-        <app-user-item [user] = "user"></app-user-item>
-      </li>
-    </ul>
+  <div class="col">
+    <div class="row">
+      <button class="btn btn-primary mb-3" type="button" (click)="loadAllUsers()">Show all users</button>
+    </div>
+    <div class="row">
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let user of allUsers" style="width: 500px">
+            <app-user-item [user] = "user" (deleteStatusChanged)="deleteStatusChanged($event)"></app-user-item>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <button class="btn btn-primary" type="button" (click)="deleteSelected()">Delete selected</button>
+    </div>
   </div>
 </div>

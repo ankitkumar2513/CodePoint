@@ -1,0 +1,30 @@
+<div class="container" style="width: 500px;">
+
+  <div class="rounded" style="background-color: white; margin-top: 10%; border: 1px solid lightgrey; padding-top: 25px;
+  padding-bottom: 25px;">
+    <form class="form-signin">
+      <h2 class="form-signin-heading">Register here</h2>
+      <label for="firstName" class="sr-only">First name</label>
+      <input [(ngModel)] = "firstname" type="text" id="firstName" class="form-control" name="firstName"
+             placeholder="First name"
+             required autofocus>
+      <label for="lastName" class="sr-only">Last name</label>
+      <input [(ngModel)] = "lastname" type="text" id="lastName" name="lastName" class="form-control"
+             placeholder="Last name"
+             required>
+      <input [(ngModel)] = "username" type="text" id="username" name="username" class="form-control"
+             placeholder="Username"
+             required>
+
+      <input [(ngModel)] = "password" type="password" id="password" name="password" class="form-control"
+             placeholder="Password"
+             required>
+      <input [(ngModel)] = "repassword" type="password" id="repassword" name="repassword" class="form-control"
+             placeholder="Re-enter password"
+             required>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="register()" [disabled]="invalid()">Register
+      </button>
+    </form>
+  </div>
+</div>

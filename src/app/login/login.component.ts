@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {AuthenticateService} from "../_services/authenticate.service";
 import {Http, Response} from "@angular/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
 
-  constructor(public auth: AuthenticateService, private http: Http) { }
+  constructor(public auth: AuthenticateService, private http: Http, private router: Router) { }
 
   ngOnInit() {
 
@@ -39,5 +40,9 @@ export class LoginComponent implements OnInit {
 
   isCleared() {
     return (this.username == '' && this.password == '');
+  }
+
+  goToRegisterPage() {
+    this.router.navigate(['/register']);
   }
 }

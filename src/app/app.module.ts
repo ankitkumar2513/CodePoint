@@ -15,12 +15,14 @@ import { QuestionPanelComponent } from './problem-page/question-panel/question-p
 import { ProblemPageComponent } from './problem-page/problem-page.component';
 import { AllusersComponent } from './admin/allusers/allusers.component';
 import { UserItemComponent } from './admin/allusers/user-item/user-item.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'solve', component: ProblemPageComponent},
-  {path: 'admin/allusers', component: AllusersComponent}
+  {path: 'admin/allusers', component: AllusersComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     QuestionPanelComponent,
     ProblemPageComponent,
     AllusersComponent,
-    UserItemComponent
+    UserItemComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
