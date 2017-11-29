@@ -16,12 +16,15 @@ import { ProblemPageComponent } from './problem-page/problem-page.component';
 import { AllusersComponent } from './admin/allusers/allusers.component';
 import { UserItemComponent } from './admin/allusers/user-item/user-item.component';
 import { RegisterComponent } from './register/register.component';
+import { ProblemsListComponent } from './problems-list/problems-list.component';
+import { ProblemItemComponent } from './problems-list/problem-item/problem-item.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'solve', component: ProblemPageComponent},
+  {path: 'solve/:title', component: ProblemPageComponent},
   {path: 'admin/allusers', component: AllusersComponent},
+  {path: 'problems', component: ProblemsListComponent},
   {path: 'register', component: RegisterComponent}
 ];
 
@@ -37,7 +40,9 @@ const appRoutes: Routes = [
     ProblemPageComponent,
     AllusersComponent,
     UserItemComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProblemsListComponent,
+    ProblemItemComponent
   ],
   imports: [
     BrowserModule,

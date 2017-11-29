@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col align-self-end">
+      <button class="btn btn-primary mt-3" role="button">Add a problem</button>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <ul class="list-group">
+      <app-problem-item class="list-group-item list-group-item-action"
+                        style="cursor: pointer;"
+                        *ngFor="let problem of problems"
+                        [problem]="problem"
+                        [routerLink]="['/solve', problem.title]">
+      </app-problem-item>
+    </ul>
+  </div>
+</div>

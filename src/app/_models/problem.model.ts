@@ -3,8 +3,8 @@
  */
 class Problem {
   title: string;
-  author: string;
-  diff: string;
+  authorUsername: string;
+  difficulty: string;
   statement: string;
   input: string;
   output: string;

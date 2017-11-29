@@ -15,19 +15,7 @@ export class AllusersComponent implements OnInit {
   constructor(private http: Http, private cred: CredentialsService) { }
 
   ngOnInit() {
-  }
-
-  loadAllUsers() {
-    this.http.get('http://localhost:8080/admin/users', this.cred.getHeaders()).subscribe(
-      (response: Response) => {
-        let allUsers = response.json();
-        allUsers.forEach(user => {
-          this.toDelete[user['id']] = false;
-        });
-        return this.allUsers = response.json();
-      },
-      (error) => console.log(error)
-    );
+    this.loadAllUsers();
   }
 
   deleteSelected() {
@@ -54,6 +42,19 @@ export class AllusersComponent implements OnInit {
       }
     });
     return deleteThese;
+  }
+
+  private loadAllUsers() {
+    this.http.get('http://localhost:8080/admin/users', this.cred.getHeaders()).subscribe(
+      (response: Response) => {
+        let allUsers = response.json();
+        allUsers.forEach(user => {
+          this.toDelete[user['id']] = false;
+        });
+        return this.allUsers = response.json();
+      },
+      (error) => console.log(error)
+    );
   }
 
 }

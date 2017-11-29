@@ -1,9 +1,13 @@
-<div id="problem-meta">
-  <span class="problem-name-label">{{ problem.title }}</span>
-  <br>
-  <span class="problem-tags">{{ problem.diff }}</span>
-  <br>
-  <span class="author-label">Author: <a href="#">{{ problem.author }}</a></span>
+<div id="problem-meta" class="col">
+  <div class="row">
+    <span class="problem-name-label">{{ problem.title }}</span>
+  </div>
+  <div class="row">
+    <span class="problem-tags">{{ problem.difficulty }}</span>
+  </div>
+  <div class="row">
+    <span class="author-label">Author: <a href="#">{{ problem.authorUsername }}</a></span>
+  </div>
 </div>
 <div id="problem-body">
   <hr>

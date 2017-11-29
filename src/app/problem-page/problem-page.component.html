@@ -2,7 +2,7 @@
   <app-question-panel></app-question-panel>
   <app-code-editor *ngIf="auth.isLoggedIn()"></app-code-editor>
   <div *ngIf="!auth.isLoggedIn()" class="alert alert-warning mt-5">
-    <strong>Oh Snap! </strong>Login first to start coding
+    <strong>Oh Snap! </strong><a href="/login"> Login</a> first to start coding
   </div>
 </div>
 <div style="margin-bottom: 100px;"></div>
